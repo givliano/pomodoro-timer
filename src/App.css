@@ -1,33 +1,132 @@
-.App {
-  text-align: center;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-size: 1.6rem;
+  font-family: 'Orbitron'
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+h1 {
+  align-self: flex-start;
+  font-size: 10rem;
+  font-family: 'Amatic SC';
+  margin-bottom: 40px;
+  padding: 5px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+.container {
+  align-items: flex-start;
+  background-color: #D0E879;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+.timer {
+  display: flex;
+  font-size: 2.6rem;
+  justify-content: space-between;
+  margin-bottom: 0px;
 }
 
-@keyframes App-logo-spin {
+.timer h2 {
+  font-size: 3.2rem;
+  margin-bottom: 5px;
+}
+
+.button {
+  padding: 0;
+  border: 0;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: transparent transparent transparent #202020;
+  height: 0px;
+  width: 0px;
+  transition: 100ms all ease;
+}
+.button.play {
+  margin: 0 5px;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 20px;
+}
+.button.pause {
+  border-style: double;
+  border-width: 0px 0 0px 17px;
+  width: 20px;
+  height: 20px;
+}
+
+.button:hover {
+  border-color: transparent transparent transparent #404040;
+}
+
+.icono-gear:hover, .icono-reset:hover, .icono-caretUpSquare:hover, .icono-caretDownSquare:hover {
+  color: #404040;
+}
+
+.timer-controls {
+  justify-self: flex-end;
+}
+
+.settings.hidden {
+  visibility: hidden;
+}
+
+.settings.show {
+  animation: show-up 300ms ease-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.icono-reset {
+  margin: 0 5px;
+  transform: scale(0.8);
+}
+
+.icono-gear {
+  transform: scale(0.7);
+}
+
+#session-length, #break-length {
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  margin-top: 30px;
+  padding: 10px;
+}
+
+@keyframes show-up {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
